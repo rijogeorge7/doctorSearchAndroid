@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdkVersion 27
@@ -12,6 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "DOCTOR_API_BASE_URL", "\"https://api.betterdoctor.com/2016-03-01/\""
+        buildConfigField "String", "BETTER_DOCTOR_API_KEY", "\"e34dea486fc6314d9f7c3432d5942370\""
 
     }
 
@@ -22,7 +28,16 @@ android {
         }
     }
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+
 }
+
+
+    kapt {
+        generateStubs = true
+    }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -31,4 +46,28 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //rx java
+    api 'io.reactivex.rxjava2:rxjava:2.1.7'
+    //api to use in app module
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //network
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.11.0"
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    //dagger
+    implementation 'com.google.dagger:dagger:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
+    //gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    // kotlin standard library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.1.2"
+    //scalar converter for string conversion retrofit
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    //mockito
+    testImplementation "org.mockito:mockito-core:2.+"
+    //mock okHttpWebserver
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
 }

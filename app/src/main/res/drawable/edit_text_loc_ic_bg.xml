@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- drawing a transparent rectangle for providing padding to icon -->
+    <item android:width="50dp"
+        android:height="60dp">
+        <shape
+            android:shape="rectangle">
+            <corners android:radius="8dp" />
+            <stroke android:width="2dp" android:color="#009DD3D1" />
+        </shape>
+    </item>
+
+    <item android:width="10dp"
+          android:height="16dp"
+          android:gravity="center"
+          android:drawable="@drawable/ic_location_ic"> </item>
+
+</layer-list>

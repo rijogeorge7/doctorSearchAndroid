@@ -46,8 +46,8 @@
 
     <com.mogo.rijogeorge.rijosseekbar.RijosSeekBar
         android:id="@+id/seekBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         app:max="100"
         app:min="1"
         app:progress="25"

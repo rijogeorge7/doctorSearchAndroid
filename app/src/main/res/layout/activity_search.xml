@@ -16,6 +16,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/doctor" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Location"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText" />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="280dp"
@@ -24,17 +33,25 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/edit_text_bg"
         android:drawableLeft="@drawable/edit_text_loc_ic_bg"/>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Speciality"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="280dp"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
         android:inputType="textPersonName"
@@ -47,13 +64,44 @@
         android:id="@+id/seekBar"
         android:layout_width="280dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        app:max="100"
+        app:min="1"
+        app:progress="25"
+        app:trackHeight="2dp"
+        app:thumbSize="10dp"
+        app:progressTextColor="#000000"
+        app:progressColor="#D0021B"
+        app:remainingColor="#9013FE"
+        app:thumbColor="#F8E71C"
+        app:progressTextSize="12sp"
+        app:progressTextAppend="mile"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insurence"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
 
 </android.support.constraint.ConstraintLayout>

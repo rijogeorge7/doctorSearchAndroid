@@ -13,7 +13,7 @@
 
     <item android:width="10dp"
           android:height="16dp"
-          android:gravity="center"
-          android:drawable="@drawable/ic_location_ic"> </item>
+          android:gravity="center_horizontal"
+          android:drawable="@drawable/ic_location"> </item>
 
 </layer-list>

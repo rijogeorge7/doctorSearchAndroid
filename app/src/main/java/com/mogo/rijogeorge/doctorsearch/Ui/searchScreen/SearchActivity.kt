@@ -1,9 +1,11 @@
-package com.mogo.rijogeorge.doctorsearch
+package com.mogo.rijogeorge.doctorsearch.Ui.searchScreen
 
+
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.SeekBar
-import com.mogo.rijogeorge.rijosseekbar.RijosSeekBar
+import com.mogo.rijogeorge.doctorsearch.R
+import com.mogo.rijogeorge.doctorsearch.Ui.ListScreen.DoctorsListActivity
 
 
 class SearchActivity : AppCompatActivity() {
@@ -11,5 +13,6 @@ class SearchActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
+        startActivity(Intent(this, DoctorsListActivity::class.java))
     }
 }

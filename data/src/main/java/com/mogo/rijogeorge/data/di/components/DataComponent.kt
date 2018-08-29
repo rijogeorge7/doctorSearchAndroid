@@ -1,5 +1,6 @@
 package com.mogo.rijogeorge.data.di.components
 
+import com.mogo.rijogeorge.data.DataManager
 import com.mogo.rijogeorge.data.DataManagerImpl
 import com.mogo.rijogeorge.data.di.modules.DataModule
 import com.mogo.rijogeorge.data.di.modules.NetworkModule
@@ -10,4 +11,5 @@ import dagger.Component
 interface DataComponent {
     fun inject(DataManager : DataManagerImpl)
     fun inject(DoctorsRepositoryImpl : DoctorsRepositoryImpl)
+    fun getDataManager() : DataManager
 }

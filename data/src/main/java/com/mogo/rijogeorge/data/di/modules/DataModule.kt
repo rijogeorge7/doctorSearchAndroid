@@ -1,5 +1,7 @@
 package com.mogo.rijogeorge.data.di.modules
 
+import com.mogo.rijogeorge.data.DataManager
+import com.mogo.rijogeorge.data.DataManagerImpl
 import com.mogo.rijogeorge.data.WebServices.DoctorService
 import com.mogo.rijogeorge.data.repository.DoctorsRepository
 import com.mogo.rijogeorge.data.repository.DoctorsRepositoryImpl
@@ -17,5 +19,10 @@ class DataModule {
     @Provides
     internal fun provideDoctorsRepository(doctorsRepositoryImpl: DoctorsRepositoryImpl): DoctorsRepository {
         return doctorsRepositoryImpl
+    }
+
+    @Provides
+    internal fun provideDataManager(dataManagerImpl: DataManagerImpl) : DataManager {
+        return dataManagerImpl
     }
 }

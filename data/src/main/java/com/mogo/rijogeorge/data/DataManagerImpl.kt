@@ -7,7 +7,7 @@ import com.mogo.rijogeorge.data.repository.DoctorsRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
-class DataManagerImpl : DataManager{
+class DataManagerImpl @Inject constructor() : DataManager{
     companion object {
         val dataComponent : DataComponent by lazy {
             DaggerDataComponent.create()

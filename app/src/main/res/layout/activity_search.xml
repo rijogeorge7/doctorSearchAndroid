@@ -1,125 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Ui.searchScreen.SearchActivity">
+    tools:context=".Ui.searchScreen.SearchActivity" >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="332dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:srcCompat="@drawable/doctor" />
+    <data>
+        <variable name="viewModel" type="com.mogo.rijogeorge.doctorsearch.Ui.searchScreen.SearchActivityViewModel" />
+    </data>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Location"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintStart_toStartOf="@+id/editText" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/edit_text_bg"
-        android:drawableLeft="@drawable/edit_text_loc_ic_bg"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Speciality"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:srcCompat="@drawable/doctor" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text_bg"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Location"
+            app:layout_constraintBottom_toTopOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="@+id/editText" />
 
-    <com.mogo.rijogeorge.rijosseekbar.RijosSeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        app:max="100"
-        app:min="1"
-        app:progress="25"
-        app:trackHeight="2dp"
-        app:thumbSize="10dp"
-        app:progressTextColor="#000000"
-        app:progressColor="#D0021B"
-        app:remainingColor="#9013FE"
-        app:thumbColor="#F8E71C"
-        app:progressTextSize="12sp"
-        app:progressTextAppend="mile"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableLeft="@drawable/edit_text_loc_ic_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@{viewModel.name}"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Speciality"
+            app:layout_constraintBottom_toTopOf="@+id/editText2"
+            app:layout_constraintStart_toStartOf="@+id/editText2" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Insurence"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintStart_toStartOf="@+id/editText3" />
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text_bg"
-        android:ems="10"
-        android:hint="choose later"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        <com.mogo.rijogeorge.rijosseekbar.RijosSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            app:max="100"
+            app:min="1"
+            app:progress="25"
+            app:trackHeight="2dp"
+            app:thumbSize="10dp"
+            app:progressTextColor="#000000"
+            app:progressColor="#D0021B"
+            app:remainingColor="#9013FE"
+            app:thumbColor="#F8E71C"
+            app:progressTextSize="12sp"
+            app:progressTextAppend="mile"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
-    <com.mogo.rijogeorge.doctorsearch.widgets.DoctorSearchButton
-        android:id="@+id/searchButton"
-        android:layout_width="280dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:bgColor="@color/colorPrimary"
-        app:buttonText="find doctors"
-        app:buttonTextSize="20sp"
-        app:buttonTextColor="@color/white"
-        app:leftDrawable="@drawable/ic_stethoscope"
-        app:iconWidth="22dp"
-        app:iconHeight="32dp"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insurence"
+            app:layout_constraintBottom_toTopOf="@+id/editText3"
+            app:layout_constraintStart_toStartOf="@+id/editText3" />
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_bg"
+            android:ems="10"
+            android:hint="choose later"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+        <com.mogo.rijogeorge.doctorsearch.widgets.DoctorSearchButton
+            android:id="@+id/searchButton"
+            android:layout_width="280dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText3"
+            app:bgColor="@color/colorPrimary"
+            app:buttonText="find doctors"
+            app:buttonTextSize="20sp"
+            app:buttonTextColor="@color/white"
+            app:leftDrawable="@drawable/ic_stethoscope"
+            app:iconWidth="22dp"
+            app:iconHeight="32dp"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -30,7 +30,6 @@ class DataManagerImpl @Inject constructor() : DataManager{
         }
 
         return observable
-
     }
 
 }

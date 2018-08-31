@@ -4,7 +4,13 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
+
 android {
+    dataBinding {
+        enabled = true
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.mogo.rijogeorge.doctorsearch"
@@ -20,7 +26,42 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "default"
+    productFlavors {
+
+        finalProduction {
+            dimension "default"
+            applicationId "com.mogo.rijogeorge.doctorsearch"
+            resValue "string", "app_name", "DoctorSearch"
+        }
+
+        demoProduction {
+            dimension "default"
+            applicationId "com.mogo.rijogeorge.doctorsearch.demoproduction"
+            resValue "string", "app_name", "DoctorSearch Demo P"
+        }
+
+        demoTesting {
+            dimension "default"
+            applicationId "com.mogo.rijogeorge.doctorsearch.demotesting"
+            resValue "string", "app_name", "DoctorSearch Demo T"
+        }
+
+
+        mock {
+            dimension "default"
+            applicationId "com.mogo.rijogeorge.doctorsearch.mock"
+            resValue "string", "app_name", "DoctorSearch Mock"
+        }
+    }
+
 }
+
+kapt {
+    generateStubs = true
+}
+
 
 dependencies {
     def lifecycle_version = "2.0.0-beta01"
@@ -34,8 +75,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     compile project(path: ':rijosseekbar')
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
     compile project(path: ':data')
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
 
     //architecture components
     implementation "android.arch.lifecycle:extensions:1.1.0"
@@ -43,4 +84,6 @@ dependencies {
     //glide image library
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //data binding
+    //kapt "com.android.databinding:compiler:3.1.2-beta1"
 }

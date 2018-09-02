@@ -1,6 +1,6 @@
 package com.mogo.rijogeorge.data.mock
 
-class MockJson {
+class ProfilesMockJson {
     companion object {
         val jsonStr = "{\n" +
                 "meta: {\n" +

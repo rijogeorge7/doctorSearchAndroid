@@ -1,7 +1,7 @@
 package com.mogo.rijogeorge.data.repository
 
 import com.mogo.rijogeorge.data.WebServices.DoctorService
-import com.mogo.rijogeorge.data.mock.MockJson
+import com.mogo.rijogeorge.data.mock.ProfilesMockJson
 import junit.framework.Assert
 import org.junit.Before
 import org.junit.Test
@@ -34,7 +34,7 @@ class DoctorsRepositoryImplTest {
 
         Mockito.`when`(doctorService.getDoctors(Mockito.anyString(), Mockito.anyInt(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.anyInt()))
                 .thenReturn(callMock)
-        val response = Response.success(MockJson.jsonStr)
+        val response = Response.success(ProfilesMockJson.jsonStr)
         Mockito.`when`(callMock.execute()).thenReturn(response)
         val doctorsList = repository.getDoctorsInArea("37.773,-122.413,100",0,10,null, null)
         Assert.assertEquals(1,doctorsList.size)

@@ -6,8 +6,8 @@ import retrofit2.http.Query
 
 public interface DoctorService {
 
-    @GET("doctors")
-    abstract fun getDoctors(@Query("location") location: String,
+    @GET("2016-03-01/doctors")
+    fun getDoctors(@Query("location") location: String,
                             @Query("limit") limit: Int,
                             @Query("name") name: String?,
                             @Query("first_name") first_name: String?,
@@ -19,4 +19,9 @@ public interface DoctorService {
                             @Query("gender") gender: String?,
                             @Query("sort") sort: String?,
                             @Query("skip") skip: Int): Call<String>
+
+    @GET("specialties")
+    fun getAvailableSpecialities(@Query("fields") fields: String?,
+                                 @Query("skip") skip: Int,
+                                 @Query("limit") limit: Int?) : Call<String>
 }
